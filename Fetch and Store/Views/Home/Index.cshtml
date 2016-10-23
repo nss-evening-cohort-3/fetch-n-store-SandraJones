@@ -4,7 +4,7 @@
 
 <div class="jumbotron">
     <h1>Fetch and Store</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p class="lead">This app is a homework assignment.</p>
     <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
 
@@ -20,22 +20,30 @@
 
             <div class="dropdown open">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownGetButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    
+
                     GET
                     <span class="caret"></span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownGetButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">GET</a>
+                    <a class="dropdown-item" href="#">HEAD</a>
                     <a class="dropdown-item" href="#">Something else here</a>
                 </div>
             </div>
-            
-            <p><a class="btn btn-default">FETCH</a></p>
-            
-            <p><a class="btn btn-default" href="http://sandrakjones.com/">404 Example</a></p>
-            <p><a class="btn btn-default" href="http://sandrakjones.com/">404 Example</a></p>
-            <p><a class="btn btn-default" href="http://sandrakjones.com/">404 Example</a></p>
+            <div ng-controller="FetchController">
+                <p>
+                    <a class="btn btn-default">
+                        FETCH  <span>
+                            <input ="textarea" ng-click="fetchData.doClick(item, $event)" />
+                            {{fetchData.fromServer}} 
+                        </span>
+                    </a>
+                </p>
+
+                <p><a class="btn btn-default" href="http://sandrakjones.com/">404 Example</a></p>
+                <p><a class="btn btn-default" href="http://sandrakjones.com/">200 Example</a></p>
+                <p><a class="btn btn-default" href="http://sandrakjones.com/">404 Example</a></p>
+            </div>
         </form>
 
     </div>
@@ -50,3 +58,23 @@
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
+<script>
+    angular.module("FetchAndStore", [])
+        .controller("FetchController", function ($scope, $http) {
+            $scope.fetchData = {};
+            $scope.fetchData.doClick = function (item, event) {
+
+                var responsePromise = $http.get(item);
+
+                responsePromise.success(function (data, status, headers, config) {
+                    $scope.fetchData.fromServer = data.title;
+                });
+                responsePromise.error(function (data, status, headers, config) {
+                    alert("AJAX failed!");
+                });
+            }
+
+
+        });
+</script>
+
