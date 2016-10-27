@@ -1,5 +1,1 @@
-﻿; (function ()
-{
-    angular.module("FetchAndStore", [] )
-
-}());
+﻿var app = angular.module("FetchAndStore", []);
