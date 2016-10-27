@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Fetch and Store</h1>
+    <p class="lead">This app is a homework assignment.</p>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2>Getting started</h2>
+        <p>
+           Hello Angular!
+            1+2 = {{1+2}}
+        </p>
+        <form>
+            <div class="dropdown open">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownGetButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    GET
+                    <span class="caret"></span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownGetButton">
+                    <a class="dropdown-item" href="#">GET</a>
+                    <a class="dropdown-item" href="#">HEAD</a>
+                   
+                </div>
+            </div>
+            <div>
+                <div ng-controller="FetchCtrl">
+                    <input type="text"/>
+                    <button ng-click="awesome()">FETCH</button>
+                </div>
+                <p><a class="btn btn-default" href="http://sandrakjones.com/">404 Example</a></p>
+                <p><a class="btn btn-default" href="http://sandrakjones.com/">200 Example</a></p>
+                <p><a class="btn btn-default" href="http://sandrakjones.com/">404 Example</a></p>
+              </div>
+        </form>
+    </div> 
+   
+
+
+</div>
+
