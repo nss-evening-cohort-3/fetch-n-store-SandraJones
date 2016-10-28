@@ -27,9 +27,9 @@ namespace Fetch_and_Store
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
-                "~/Scripts/angular.js",
-                "~/Scripts/app/app.js",
-                "~/Scripts/FetchCtrl.js"));
+                       "~/Scripts/angular.js",
+                       "~/Scripts/app/app.js",
+                       "~/Scripts/FetchCtrl.js"));
         }
     }
 }

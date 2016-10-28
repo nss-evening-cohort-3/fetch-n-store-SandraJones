@@ -7,7 +7,7 @@
     <p class="lead">This app is a homework assignment.</p>
 </div>
 
-<div class="row">
+<div class="row centered">
     <div class="col-lg-12">
         <h2>Getting started</h2>
         <p>
@@ -28,8 +28,11 @@
             </div>
             <div>
                 <div ng-controller="FetchCtrl">
-                    <input type="text"/>
-                    <button ng-click="awesome()">FETCH</button>
+                    <label>
+                        URL:
+                        <input type="url"  ng-model="url.text" placeholder="http://" class="urlInput"/>
+                    </label>
+                    <button ng-click="url()"class="fetchButton">FETCH</button>
                 </div>
                 <p><a class="btn btn-default" href="http://sandrakjones.com/">404 Example</a></p>
                 <p><a class="btn btn-default" href="http://sandrakjones.com/">200 Example</a></p>
