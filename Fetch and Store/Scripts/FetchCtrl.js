@@ -3,6 +3,8 @@
    
     $scope.address = "";
     $scope.status = "";
+    $scope.httpMethod = "";
+    $scope.responseTime = "";
 
     $scope.URLmethod = function () {
 
@@ -17,7 +19,5 @@
                 $scope.working = false;
             });
     };
-
-
-
 });
+
