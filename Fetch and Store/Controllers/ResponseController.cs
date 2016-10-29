@@ -9,16 +9,16 @@ namespace Fetch_and_Store.Controllers
 {
     public class ResponseController : ApiController
     {
-        // GET api/<controller>
+        // GET api/<controller> will get object including status code etc. plus html page
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/<controller>/5DA
-        public dynamic Get(dynamic url)
+        // GET api/<controller>/5DA this is to pull one row based upon ID from table in DB
+        public string Get(string address)
         {
-            return url;
+            return address;
         }
 
         // POST api/<controller>

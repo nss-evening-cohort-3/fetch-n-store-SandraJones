@@ -1,25 +1,22 @@
 ﻿app.controller("FetchCtrl", function ($scope, $http) {
 
    
-    $scope.url = function () {
+    $scope.address = "";
+    $scope.status = "";
+
+    $scope.URLmethod = function () {
 
         console.log("fetchcontroller is here");
-
-        $http.get("/api/Response")
-            .success(function (data, status, headers, config) {
-            }).error(function (data, status, headers, config) {
+        console.log($scope.address);
+        $http.get($scope.address)
+            .then(function success(response) {
+                console.log(response);
+                $scope.status = response.status;
+            }, function error(response) {
                 $scope.title = "Oops... something went wrong";
                 $scope.working = false;
             });
     };
-
-
-    //example of AJAX GET call:
-    //$("button").click(function () {
-    //    $.get("demo_test.asp", function (data, status) {
-    //        alert("Data: " + data + "\nStatus: " + status);
-    //    });
-    //});
 
 
 
