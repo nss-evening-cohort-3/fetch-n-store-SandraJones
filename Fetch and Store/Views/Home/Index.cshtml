@@ -16,27 +16,23 @@
         </p>
         <form>
             <div class="dropdown open">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownGetButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    GET
-                    <span class="caret"></span>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownGetButton">
-                    <a class="dropdown-item" href="#">GET</a>
-                    <a class="dropdown-item" href="#">HEAD</a>
-                   
-                </div>
+                <select class="dropdown-menu" aria-labelledby="dropdownGetButton">
+                    <option ng-click="getButtonHasBeenClicked" id="getButton" class="dropdown-item" >GET</option>
+                    <option ng-click="headButtonHasBeenClicked" id="headButton" class="dropdown-item">HEAD</option>          
+                </select>
             </div>
+            <br/>
+            <br/>
             <div>
-                <div ng-controller="FetchCtrl">
+                <div>
                     <label>
                         URL:
                         <input type="url"  ng-model="address" placeholder="http://" class="urlInput"/>
                     </label>
                     <button ng-click="URLmethod()"class="fetchButton">FETCH</button>
                     <p>Status Code for your URL: {{status}}</p>
-                    <p>URL Address: {{address}}</p>
-                    <p>HTTP Method: GET</p>
-                    <p>Request/Response Time: {{responseTime}}</p>
+                    <p>URL Address: {{address}}</p>         
+                    <p>Request/Response Time in Milliseconds: {{elapsed}}</p>
                 </div>
                 <p>Examples of websites with various status codes:</p>
                 <p><a class="btn btn-default" href="http://httpstat.us/404">404 Example</a></p>
