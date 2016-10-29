@@ -15,10 +15,10 @@ namespace Fetch_and_Store.Controllers
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
+        // GET api/<controller>/5DA
+        public dynamic Get(dynamic url)
         {
-            return "value";
+            return url;
         }
 
         // POST api/<controller>

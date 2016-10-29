@@ -181,6 +181,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ResponseController.cs" />
+    <Compile Include="DAL\RepoContext.cs" />
+    <Compile Include="DAL\ResponseRepo.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

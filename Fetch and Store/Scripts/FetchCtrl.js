@@ -1,11 +1,6 @@
 ﻿app.controller("FetchCtrl", function ($scope, $http) {
 
-    //$scope.url = {
-    //    text: 'http://google.com'
-    //};
-
-    // https://nss-statuscodes.herokuapp.com
-
+   
     $scope.url = function () {
 
         console.log("fetchcontroller is here");
@@ -19,12 +14,6 @@
     };
 
 
-
-
-
-
-
-
     //example of AJAX GET call:
     //$("button").click(function () {
     //    $.get("demo_test.asp", function (data, status) {
@@ -32,10 +21,6 @@
     //    });
     //});
 
-
-
-
-    //NEED TO PUT THE AWESOME THING IN HERE THAT IS IN INDEX.CSHTML
 
 
 });
